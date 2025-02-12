@@ -1,0 +1,123 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+.reembolso {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 97vw;
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 934px;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    color: #000;
+    text-align: start;
+  }
+  p {
+    text-align: start;
+    font-size: 1em;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    color: #000;
+  }
+  .cards {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+  .analitics {
+    border: 0.8px solid #cbd4e1;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 934px;
+    height: 100px;
+    margin-top: 2rem;
+    div {
+      margin: 1rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .solicitados {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        background-color: #00bedd;
+      }
+      .emAnalise {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        background-color: #e56700;
+      }
+      .aprovados {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        background-color: #007a6a;
+      }
+      .rejeitados {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        background-color: #a60b2f;
+      }
+      span {
+        margin-right: 0.5rem;
+        font-size: 1em;
+        font-weight: 700;
+        font-family: "Inter", sans-serif;
+      }
+      p {
+        font-size: 1em;
+        font-weight: 400;
+        font-family: "Inter", sans-serif;
+      }
+    }
+  }
+}
+
+// .selects {
+//   width: 285px;
+//   height: 45px;
+//   border: 0.8px solid #cbd4e1;
+//   border-radius: 6px;
+//   padding: 0;
+//   gap: 0;
+//   select {
+//     border-radius: 6px 0 0 6px;
+//     border: none;
+//     background-color: #fff;
+//     width: 100%;
+//     height: 100%;
+//     appearance: none;
+//   }
+//   .seta {
+//     border: none;
+//     border-radius: 0 6px 6px 0;
+//     width: 30%;
+//     height: 100%;
+//     background-color: #001a3d;
+//     img {
+//       width: 20px;
+//       margin: 0;
+//       padding: 0;
+//     }
+//   }
+// }
