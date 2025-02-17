@@ -1,93 +1,142 @@
-.container {
+.divContainer {
   width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: row;
 }
-.reembolso {
+.container {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 97vw;
-  .title {
+  justify-content: start;
+  .header {
+    height: 5vh;
     display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    .iconHome {
+      width: 15px;
+      height: 15px;
+    }
+    .iconSeta {
+      margin: 0 0.5rem;
+      width: 10px;
+      height: 15px;
+    }
+    h2 {
+      font-size: 1em;
+      font-weight: 400;
+      font-family: "Inter", sans-serif;
+    }
+  }
+  .reembolso {
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
-    width: 934px;
-  }
-  h1 {
-    font-size: 2em;
-    font-weight: 700;
-    font-family: "Inter", sans-serif;
-    color: #000;
-    text-align: start;
-  }
-  p {
-    text-align: start;
-    font-size: 1em;
-    font-weight: 400;
-    font-family: "Inter", sans-serif;
-    color: #000;
-  }
-  .cards {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    width: 100vw;
-  }
-  .analitics {
-    border: 0.8px solid #cbd4e1;
-    border-radius: 6px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 934px;
-    height: 100px;
-    margin-top: 2rem;
-    div {
-      margin: 1rem;
+    width: 100%;
+    margin-top: 20vh;
+    .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    h1 {
+      font-size: 2em;
+      font-weight: 700;
+      font-family: "Inter", sans-serif;
+      color: #000;
+      text-align: start;
+    }
+    p {
+      text-align: start;
+      font-size: 1em;
+      font-weight: 400;
+      font-family: "Inter", sans-serif;
+      color: #000;
+    }
+    .cards {
+      margin-top: 2rem;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      .solicitados {
-        width: 36px;
-        height: 36px;
-        border-radius: 6px;
-        background-color: #00bedd;
+      width: 100%;
+    }
+    .analitics {
+      border: 0.8px solid #cbd4e1;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 48.6vw;
+      height: 10vh;
+      margin-top: 2rem;
+      div {
+        margin: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .solicitados {
+          width: 36px;
+          height: 36px;
+          border-radius: 6px;
+          background-color: #00bedd;
+        }
+        .emAnalise {
+          width: 36px;
+          height: 36px;
+          border-radius: 6px;
+          background-color: #e56700;
+        }
+        .aprovados {
+          width: 36px;
+          height: 36px;
+          border-radius: 6px;
+          background-color: #007a6a;
+        }
+        .rejeitados {
+          width: 36px;
+          height: 36px;
+          border-radius: 6px;
+          background-color: #a60b2f;
+        }
+        span {
+          margin-right: 0.5rem;
+          font-size: 1em;
+          font-weight: 700;
+          font-family: "Inter", sans-serif;
+        }
+        p {
+          font-size: 1em;
+          font-weight: 400;
+          font-family: "Inter", sans-serif;
+        }
       }
-      .emAnalise {
-        width: 36px;
-        height: 36px;
-        border-radius: 6px;
-        background-color: #e56700;
-      }
-      .aprovados {
-        width: 36px;
-        height: 36px;
-        border-radius: 6px;
-        background-color: #007a6a;
-      }
-      .rejeitados {
-        width: 36px;
-        height: 36px;
-        border-radius: 6px;
-        background-color: #a60b2f;
-      }
-      span {
-        margin-right: 0.5rem;
-        font-size: 1em;
-        font-weight: 700;
-        font-family: "Inter", sans-serif;
-      }
-      p {
+    }
+    .atualizacao {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1.5rem;
+      h4 {
         font-size: 1em;
         font-weight: 400;
         font-family: "Inter", sans-serif;
+        color: #0844c4;
+        margin-left: 0.5rem;
       }
     }
   }
