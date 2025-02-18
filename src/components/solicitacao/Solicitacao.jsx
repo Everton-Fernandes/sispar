@@ -5,6 +5,8 @@ import home from "../../assets/img//Dashboard/home.png";
 import btnCancelar from "../../assets/img/Dashboard/backspace.png";
 import lixeira from "../../assets/img/Dashboard/lixeira.png";
 import motivo from "../../assets/img/Dashboard/motivo.png";
+import aprovar from "../../assets/img/Dashboard/aprovar.png";
+import cancelar from "../../assets/img/Dashboard/N-Rejeitados.png";
 
 function Solicitacao() {
   return (
@@ -102,6 +104,7 @@ function Solicitacao() {
                     <option value="0">Sel.</option>
                     <option value="1">BRL</option>
                     <option value="2">USD</option>
+                    <option value="3">ARS</option>
                   </select>
                 </div>
                 <div className={styles.valor}>
@@ -125,8 +128,8 @@ function Solicitacao() {
           </form>
           <table className={styles.tabela}>
             <tr className={styles.cabecalho}>
-              <th></th>
-              <th>Colaborador(a)</th>
+              <th className={styles.col1}>00</th>
+              <th>Colaborador</th>
               <th>Empresa</th>
               <th>Nº Prest.</th>
               <th>Data</th>
@@ -140,34 +143,90 @@ function Solicitacao() {
               <th>Dist. Km</th>
               <th>Val. Km</th>
               <th>Val. Faturado</th>
-              <th>Despesa</th>
+              <th className={styles.lastCol}>Despesa</th>
             </tr>
             <tr>
-              <td>
+              <td className={styles.col1}>
                 <img src={lixeira} alt="icone lixeira" />
               </td>
-              <td>Colaborador(a)</td>
-              <td>Empresa</td>
-              <td>Nº Prest.</td>
-              <td>Data</td>
+              <td>Vitor Carvalho</td>
+              <td>WSS001</td>
+              <td>329456</td>
+              <td>08/01/2025</td>
               <td>
                 <img src={motivo} alt="icone descrição" />
               </td>
-              <td>Tipo Reemb.</td>
-              <td>Ctrl. Custo</td>
-              <td>Ord. Int.</td>
-              <td>Div.</td>
-              <td>PEP</td>
-              <td>Moeda</td>
-              <td>Dist. Km</td>
-              <td>Val. Km</td>
-              <td>Val. Faturado</td>
-              <td>Despesa</td>
+              <td>Desp. de </td>
+              <td>1100110002</td>
+              <td>0003</td>
+              <td>002</td>
+              <td>001</td>
+              <td>BRL</td>
+              <td>434Km</td>
+              <td>0.65</td>
+              <td>242.10</td>
+              <td className={styles.lastCol}>40.05</td>
+            </tr>
+            <tr>
+              <td className={styles.col1}>
+                <img src={lixeira} alt="icone lixeira" />
+              </td>
+              <td>Vanessa Port</td>
+              <td>WSS002</td>
+              <td>987789</td>
+              <td>01/01/2025</td>
+              <td>
+                <img src={motivo} alt="icone descrição" />
+              </td>
+              <td>Desp. de </td>
+              <td>1100110002</td>
+              <td>0003</td>
+              <td>002</td>
+              <td>001</td>
+              <td>BRL</td>
+              <td>434Km</td>
+              <td>0.65</td>
+              <td>242.10</td>
+              <td className={styles.lastCol}>40.05</td>
+            </tr>
+            <tr>
+              <td className={styles.col1}>
+                <img src={lixeira} alt="icone lixeira" />
+              </td>
+              <td>Washington Kl</td>
+              <td>WSS003</td>
+              <td>546791</td>
+              <td>03/01/2025</td>
+              <td>
+                <img src={motivo} alt="icone descrição" />
+              </td>
+              <td>Desp. de </td>
+              <td>1100110002</td>
+              <td>0003</td>
+              <td>002</td>
+              <td>001</td>
+              <td>BRL</td>
+              <td>434Km</td>
+              <td>0.65</td>
+              <td>242.10</td>
+              <td className={styles.lastCol}>40.05</td>
             </tr>
           </table>
           <section className={styles.enviarSolicitacao}>
-            <button className={styles.btnEnviar}>Enviar para Análise</button>
+            <div>
+              <label>Total Faturado</label>
+              <input type="text" nome="totalFaturado" placeholder="0.00" />
+            </div>
+            <div>
+              <label>Total Despesa</label>
+              <input type="text" nome="totalFaturado" placeholder="0.00" />
+            </div>
+            <button className={styles.btnEnviar}>
+              <img src={aprovar} alt="icone aprovar" />
+              Enviar para Análise
+            </button>
             <button className={styles.btnCancelarSolicitacao}>
+              <img src={cancelar} alt="icone cancelar" />
               Cancelar Solicitação
             </button>
           </section>

@@ -45,13 +45,13 @@
     margin-bottom: 0.6rem;
   }
   .empresaContainer {
-    width: 35vw;
+    width: 37vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 0.5rem;
     .linhaUm {
-      margin-left: 1rem;
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -100,7 +100,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: start;
-      margin-left: 1rem;
       margin-top: 1rem;
       label {
         font-size: 1em;
@@ -121,11 +120,12 @@
     background-color: #cbd4e1;
   }
   .valores {
-    width: 57vw;
+    width: 55vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
+    padding-right: 2rem;
     .linhaTres {
       width: 100%;
       display: flex;
@@ -407,21 +407,15 @@
 
 .tabela {
   width: 93.3vw;
-  height: 70vh;
-  border: 1px solid #cbd4e1;
+  height: 60vh;
+  border: 0.8px solid #cbd4e1;
   border-radius: 6px;
   margin: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items: start;
-  tr {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
+  align-items: center;
+  margin-top: 2rem;
   .cabecalho {
     width: 100%;
     display: flex;
@@ -430,14 +424,145 @@
     align-items: center;
     background-color: #f2f2f2;
     border-radius: 6px 6px 0 0;
-    .coluna {
+    border-bottom: 0.8px solid #cbd4e1;
+    .col1 {
       display: flex;
-      flex: 1;
       justify-content: center;
       align-items: center;
+      color: #f2f2f2;
+      width: 3vw;
+      height: 100%;
+      border-right: 0.8px solid #cbd4e1;
+    }
+    th {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-wrap: wrap;
+      height: 100%;
+      width: 10vw;
+      border-right: 0.8px solid #cbd4e1;
+      color: #23282f;
+      font-size: 1em;
+      font-weight: 400;
+      font-family: "Inter", sans-serif;
+    }
+    .lastCol {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      border: none;
     }
   }
-  td {
+  tr {
+    width: 100%;
+    height: 4vh;
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border-bottom: 0.8px solid #cbd4e1;
+    .col1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3vw;
+      height: 100%;
+      border-right: 0.8px solid #cbd4e1;
+    }
+    td {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10vw;
+      height: 100%;
+      border-right: 0.8px solid #cbd4e1;
+      color: #23282f;
+      font-size: 1em;
+      font-weight: 400;
+      font-family: "Inter", sans-serif;
+    }
+    .lastCol {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
+.enviarSolicitacao {
+  width: 93.3vw;
+  height: 10vh;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  margin-top: 2rem;
+  div {
+    margin: 1rem;
+    width: 7.5vw;
+    height: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    label {
+      color: #23282f;
+      font-size: 1em;
+      font-weight: 700;
+      font-family: "Inter", sans-serif;
+    }
+    input {
+      width: 100%;
+      height: 5vh;
+      margin-top: 0.7rem;
+      border-radius: 6px;
+      border: 0.8px solid #cbd4e1;
+      padding-left: 0.5rem;
+    }
+    ::placeholder {
+      font-size: 1em;
+      color: #757575;
+      font-weight: 400;
+      font-family: "Inter", sans-serif;
+      margin-left: 1rem;
+    }
+  }
+  .btnEnviar {
+    width: 11.4vw;
+    height: 6vh;
+    background-color: #001a3d;
+    color: #ffffff;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    border: none;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    img {
+      margin-right: 0.5rem;
+    }
+  }
+  .btnCancelarSolicitacao {
+    margin-right: 1rem;
+    margin-top: 1rem;
+    width: 11.4vw;
+    height: 6vh;
+    background-color: #a60b2f;
+    color: #ffffff;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    border: none;
+    img {
+      margin-right: 0.5rem;
+    }
   }
 }
