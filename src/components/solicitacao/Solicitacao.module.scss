@@ -41,6 +41,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
   label {
     margin-bottom: 0.6rem;
   }
@@ -106,7 +107,7 @@
         font-weight: 700;
         font-family: "Inter", sans-serif;
       }
-      input {
+      textarea {
         width: 100%;
         height: 5vh;
         border-radius: 6px;
@@ -152,6 +153,7 @@
           color: #757575;
           font-weight: 400;
           font-family: "Inter", sans-serif;
+          padding-left: 0.5rem;
         }
       }
       .tipoDespesa {
@@ -164,15 +166,48 @@
           font-weight: 700;
           font-family: "Inter", sans-serif;
         }
-        select {
+        .selectContainer {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
           width: 100%;
           height: 5vh;
+          select {
+            height: 100%;
+            width: 100%;
+            border-radius: 6px 0 0 6px;
+            border: 0.8px solid #cbd4e1;
+            font-size: 1em;
+            color: #757575;
+            font-weight: 400;
+            font-family: "Inter", sans-serif;
+            appearance: none;
+            padding-left: 0.5rem;
+          }
+          select:focus {
+            outline: none;
+          }
+          .seta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-radius: 0 6px 6px 0;
+            width: 48px;
+            height: 100%;
+            background-color: #001a3d;
+            img {
+              width: 16px;
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+        .selectContainer:hover {
           border-radius: 6px;
-          border: 0.8px solid #cbd4e1;
-          font-size: 1em;
-          color: #757575;
-          font-weight: 400;
-          font-family: "Inter", sans-serif;
+          border: 0.8px solid #001a3d;
+          box-shadow: 0rem 0rem 0rem 0.3rem #cbd4e1;
         }
       }
       .controleCusto {
@@ -185,15 +220,48 @@
           font-weight: 700;
           font-family: "Inter", sans-serif;
         }
-        select {
+        .selectContainer {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
           width: 100%;
           height: 5vh;
+          select {
+            height: 100%;
+            width: 100%;
+            border-radius: 6px 0 0 6px;
+            border: 0.8px solid #cbd4e1;
+            font-size: 1em;
+            color: #757575;
+            font-weight: 400;
+            font-family: "Inter", sans-serif;
+            appearance: none;
+            padding-left: 0.5rem;
+          }
+          select:focus {
+            outline: none;
+          }
+          .seta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-radius: 0 6px 6px 0;
+            width: 48px;
+            height: 100%;
+            background-color: #001a3d;
+            img {
+              width: 16px;
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+        .selectContainer:hover {
           border-radius: 6px;
-          border: 0.8px solid #cbd4e1;
-          font-size: 1em;
-          color: #757575;
-          font-weight: 400;
-          font-family: "Inter", sans-serif;
+          border: 0.8px solid #001a3d;
+          box-shadow: 0rem 0rem 0rem 0.3rem #cbd4e1;
         }
       }
     }
@@ -312,6 +380,11 @@
           color: #757575;
           font-weight: 400;
           font-family: "Inter", sans-serif;
+          appearance: none;
+          padding-left: 0.5rem;
+        }
+        select:focus {
+          outline: none;
         }
       }
       .valor {
@@ -407,7 +480,7 @@
 
 .tabela {
   width: 93.3vw;
-  height: 60vh;
+  height: 55vh;
   border: 0.8px solid #cbd4e1;
   border-radius: 6px;
   margin: 0.5rem;
@@ -471,6 +544,9 @@
       width: 3vw;
       height: 100%;
       border-right: 0.8px solid #cbd4e1;
+    }
+    .col1:focus {
+      background-color: #a60b2f;
     }
     td {
       display: flex;

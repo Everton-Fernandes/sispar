@@ -1,6 +1,9 @@
 import styles from "./Solicitacao.module.scss";
 import Navbar from "../navbar/Navbar";
+import Modal from "../modal/Modal";
+import { useState } from "react";
 import seta from "../../assets/img/Dashboard/setaRight.png";
+import selectImg from "../../assets/img/Dashboard/Vector.png";
 import home from "../../assets/img//Dashboard/home.png";
 import btnCancelar from "../../assets/img/Dashboard/backspace.png";
 import lixeira from "../../assets/img/Dashboard/lixeira.png";
@@ -9,6 +12,10 @@ import aprovar from "../../assets/img/Dashboard/aprovar.png";
 import cancelar from "../../assets/img/Dashboard/N-Rejeitados.png";
 
 function Solicitacao() {
+  const [openModal, setModalOpen] = useState(false);
+  const [openModalExcluir, setModalOpenExcluir] = useState(false);
+  const [openModalCancelar, setModalOpenCancelar] = useState(false);
+
   return (
     <div className={styles.divContainer}>
       <Navbar />
@@ -39,7 +46,7 @@ function Solicitacao() {
               </div>
               <div className={styles.linhaDois}>
                 <label>Descrição / Motivo do Reembolso</label>
-                <input type="text" nome="descricao" />
+                <textarea type="text" nome="descricao" />
               </div>
             </div>
 
@@ -53,31 +60,41 @@ function Solicitacao() {
                 </div>
                 <div className={styles.tipoDespesa}>
                   <label>Tipo de Despesa</label>
-                  <select name="tipoDespesa">
-                    <option value="0">Selecionar</option>
-                    <option value="1">Alimentação</option>
-                    <option value="2">Combustível</option>
-                    <option value="3">Condução</option>
-                    <option value="4">Estacionamento</option>
-                    <option value="5">Viagem admin.</option>
-                    <option value="6">Viagem operacional</option>
-                    <option value="7">Eventos de representação</option>
-                  </select>
+                  <div className={styles.selectContainer}>
+                    <select name="tipoDespesa">
+                      <option value="0">Selecionar</option>
+                      <option value="1">Alimentação</option>
+                      <option value="2">Combustível</option>
+                      <option value="3">Condução</option>
+                      <option value="4">Estacionamento</option>
+                      <option value="5">Viagem admin.</option>
+                      <option value="6">Viagem operacional</option>
+                      <option value="7">Eventos de representação</option>
+                    </select>
+                    <div className={styles.seta}>
+                      <img src={selectImg} alt="icone seta" />
+                    </div>
+                  </div>
                 </div>
                 <div className={styles.controleCusto}>
                   <label>Controle de Custo</label>
-                  <select name="controleCusto">
-                    <option value="0">Selecionar</option>
-                    <option value="1">
-                      1100109002 - FIN CONTROLES INTERNOS MTZ
-                    </option>
-                    <option value="2">
-                      1100110002 - FIN VICE-PRESIDENCIA FINANÇAS MTZ
-                    </option>
-                    <option value="3">
-                      1100110102 - FIN CONTABILIDADE MTZ
-                    </option>
-                  </select>
+                  <div className={styles.selectContainer}>
+                    <select name="controleCusto">
+                      <option value="0">Selecionar</option>
+                      <option value="1">
+                        1100109002 - FIN CONTROLES INTERNOS MTZ
+                      </option>
+                      <option value="2">
+                        1100110002 - FIN VICE-PRESIDENCIA FINANÇAS MTZ
+                      </option>
+                      <option value="3">
+                        1100110102 - FIN CONTABILIDADE MTZ
+                      </option>
+                    </select>
+                    <div className={styles.seta}>
+                      <img src={selectImg} alt="icone seta" />
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -120,9 +137,47 @@ function Solicitacao() {
                   <input type="text" nome="valorFaturado" />
                 </div>
                 <button className={styles.btnSalvar}>+ Salvar</button>
-                <button className={styles.btnCancelar}>
+                <button
+                  formAction="#"
+                  className={styles.btnCancelar}
+                  onClick={() => {
+                    setModalOpen(true);
+                  }}
+                >
                   <img src={btnCancelar} alt="icone voltar" />
                 </button>
+                {openModal && (
+                  <Modal
+                    isOpen={openModal}
+                    setModalOpen={() => setModalOpen(!openModal)}
+                    buttonText="Continuar Editando"
+                    buttonText2="Sim, limpar"
+                  >
+                    <p>Deseja realmente limpar os campos preenchidos acima?</p>
+                  </Modal>
+                )}
+                {openModalExcluir && (
+                  <Modal
+                    isOpen={openModalExcluir}
+                    setModalOpen={() => setModalOpenExcluir(!openModalExcluir)}
+                    buttonText="Continuar Editando"
+                    buttonText2="Sim, excluir"
+                  >
+                    <p>Deseja realmente excluir os dados dessa linha?</p>
+                  </Modal>
+                )}
+                {openModalCancelar && (
+                  <Modal
+                    isOpen={openModalCancelar}
+                    setModalOpen={() =>
+                      setModalOpenCancelar(!openModalCancelar)
+                    }
+                    buttonText="Continuar Editando"
+                    buttonText2="Sim, Cancelar"
+                  >
+                    <p>Tem certeza que deseja cancelar a solicitação?</p>
+                  </Modal>
+                )}
               </div>
             </div>
           </form>
@@ -146,7 +201,12 @@ function Solicitacao() {
               <th className={styles.lastCol}>Despesa</th>
             </tr>
             <tr>
-              <td className={styles.col1}>
+              <td
+                className={styles.col1}
+                onClick={() => {
+                  setModalOpenExcluir(true);
+                }}
+              >
                 <img src={lixeira} alt="icone lixeira" />
               </td>
               <td>Vitor Carvalho</td>
@@ -168,7 +228,12 @@ function Solicitacao() {
               <td className={styles.lastCol}>40.05</td>
             </tr>
             <tr>
-              <td className={styles.col1}>
+              <td
+                className={styles.col1}
+                onClick={() => {
+                  setModalOpenExcluir(true);
+                }}
+              >
                 <img src={lixeira} alt="icone lixeira" />
               </td>
               <td>Vanessa Port</td>
@@ -190,7 +255,12 @@ function Solicitacao() {
               <td className={styles.lastCol}>40.05</td>
             </tr>
             <tr>
-              <td className={styles.col1}>
+              <td
+                className={styles.col1}
+                onClick={() => {
+                  setModalOpenExcluir(true);
+                }}
+              >
                 <img src={lixeira} alt="icone lixeira" />
               </td>
               <td>Washington Kl</td>
@@ -225,7 +295,12 @@ function Solicitacao() {
               <img src={aprovar} alt="icone aprovar" />
               Enviar para Análise
             </button>
-            <button className={styles.btnCancelarSolicitacao}>
+            <button
+              onClick={() => {
+                setModalOpenCancelar(true);
+              }}
+              className={styles.btnCancelarSolicitacao}
+            >
               <img src={cancelar} alt="icone cancelar" />
               Cancelar Solicitação
             </button>

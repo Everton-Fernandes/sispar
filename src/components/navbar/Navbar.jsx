@@ -6,6 +6,7 @@ import historico from "../../assets/img/Header/Botão - Histórico.png";
 import pesquisa from "../../assets/img/Header/Botão - Pesquisa.png";
 import reembolso from "../../assets/img/Header/Botão - Reembolso.png";
 import sair from "../../assets/img/Header/Botão - Sair.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -19,9 +20,11 @@ function Navbar() {
         <button className="btnHome">
           <img src={home} alt="icone de home" />
         </button>
-        <button className="btnReembolso">
-          <img src={reembolso} alt="icone de reembolso" />
-        </button>
+        <Link to="/reembolso">
+          <button className="btnReembolso">
+            <img src={reembolso} alt="icone de reembolso" />
+          </button>
+        </Link>
         <button className="btnPesquisa">
           <img src={pesquisa} alt="icone de pesquisa" />
         </button>
@@ -30,9 +33,11 @@ function Navbar() {
         </button>
       </div>
 
-      <button className={styles.btnSair}>
-        <img src={sair} alt="icone de sair" />
-      </button>
+      <Link to="/">
+        <button className={styles.btnSair}>
+          <img src={sair} alt="icone de sair" />
+        </button>
+      </Link>
     </nav>
   );
 }
